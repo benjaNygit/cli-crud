@@ -20,7 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// si hay info la transforma en json
+	// check al tamaño del archivo
 	if info.Size() != 0 {
 		bytes, err := io.ReadAll(file)
 		if err != nil {
