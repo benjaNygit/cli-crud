@@ -11,6 +11,7 @@ import (
 
 func main() {
 	file := FileMain()
+	defer file.Close()
 	var tasks []task.Task
 
 	info, err := file.Stat()
@@ -39,7 +40,6 @@ func FileMain() *os.File {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
 
 	return file
 }
