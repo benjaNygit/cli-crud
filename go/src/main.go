@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 
+	menu "github.com/benjaNygit/cli-crud/go/src/menu"
 	task "github.com/benjaNygit/cli-crud/go/src/tasks"
 )
 
@@ -33,6 +34,8 @@ func main() {
 	} else {
 		tasks = []task.Task{}
 	}
+
+	menu.Menu(tasks, file)
 }
 
 func FileMain() *os.File {
