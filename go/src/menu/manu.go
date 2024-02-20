@@ -3,6 +3,7 @@ package menu
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -34,7 +35,7 @@ func Menu(tasks []task.Task, file *os.File) {
 		}
 		id, err := strconv.Atoi(os.Args[2])
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 			return
 		}
 
@@ -42,7 +43,17 @@ func Menu(tasks []task.Task, file *os.File) {
 		task.SaveTasks(tasks, file)
 
 	case "delete":
-		return
+		if len(os.Args) < 3 {
+			fmt.Println("Especifica el indice de la tarea")
+			return
+		}
+		id, err := strconv.Atoi(os.Args[2])
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		tasks = task.DeleteTask(tasks, id)
+		task.SaveTasks(tasks, file)
 
 	default:
 		PrintUsage()
