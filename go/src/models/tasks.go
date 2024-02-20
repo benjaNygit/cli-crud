@@ -75,9 +75,9 @@ func ListTasks(tasks []Task) {
 	}
 }
 
-func CompletedTask(tasks []Task, id uuid.UUID) []Task {
-	for i, task := range tasks {
-		if task.Id == id {
+func CompletedTask(tasks []Task, id int) []Task {
+	for i := range tasks {
+		if i == id-1 {
 			tasks[i].Completed = true
 			break
 		}

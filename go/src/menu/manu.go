@@ -4,9 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
-	task "github.com/benjaNygit/cli-crud/go/src/tasks"
+	task "github.com/benjaNygit/cli-crud/go/src/models"
 )
 
 func Menu(tasks []task.Task, file *os.File) {
@@ -27,7 +28,19 @@ func Menu(tasks []task.Task, file *os.File) {
 	case "list":
 		task.ListTasks(tasks)
 	case "complete":
-		return
+		if len(os.Args) < 3 {
+			fmt.Println("Especifica el indice de la tarea")
+			return
+		}
+		id, err := strconv.Atoi(os.Args[2])
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		tasks = task.CompletedTask(tasks, id)
+		task.SaveTasks(tasks, file)
+
 	case "delete":
 		return
 

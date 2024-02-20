@@ -7,7 +7,7 @@ import (
 	"os"
 
 	menu "github.com/benjaNygit/cli-crud/go/src/menu"
-	task "github.com/benjaNygit/cli-crud/go/src/tasks"
+	task "github.com/benjaNygit/cli-crud/go/src/models"
 )
 
 func main() {
