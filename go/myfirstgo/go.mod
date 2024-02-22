@@ -1,4 +1,4 @@
-module github.com/benjaNygit/cli-crud/go
+module github.com/benjaNygit/cli-crud/go/myfirstgo
 
 go 1.22.0
 

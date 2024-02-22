@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	task "github.com/benjaNygit/cli-crud/go/src/models"
+	task "github.com/benjaNygit/cli-crud/go/myfirstgo/src/models"
 )
 
 func Menu(tasks []task.Task, file *os.File) {

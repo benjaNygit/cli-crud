@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	menu "github.com/benjaNygit/cli-crud/go/src/menu"
-	task "github.com/benjaNygit/cli-crud/go/src/models"
+	menu "github.com/benjaNygit/cli-crud/go/myfirstgo/src/menu"
+	task "github.com/benjaNygit/cli-crud/go/myfirstgo/src/models"
 )
 
 func main() {
