@@ -7,11 +7,11 @@ import (
 	"gorm.io/gorm"
 )
 
-var db *gorm.DB
+var DB *gorm.DB
 
 func DBConnection() {
 	var err error
-	db, err = gorm.Open(sqlite.Open("notes.db"), &gorm.Config{})
+	DB, err = gorm.Open(sqlite.Open("notes.sqlite"), &gorm.Config{})
 
 	if err != nil {
 		log.Fatal(err)

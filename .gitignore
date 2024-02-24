@@ -1,5 +1,7 @@
 .vscode/
 
 *.exe
+*.exe~
 *.db
+*.sqlite
 *.log
