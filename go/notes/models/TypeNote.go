@@ -4,6 +4,6 @@ import "gorm.io/gorm"
 
 type TypeNote struct {
 	gorm.Model
-	Code        uint   `gorm:"primaryKey"`
-	Description string `gorm:"unique"`
+	Code        uint   `json:"code" gorm:"primaryKey"`
+	Description string `json:"description" gorm:"unique"`
 }
