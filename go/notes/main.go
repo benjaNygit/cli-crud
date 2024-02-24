@@ -16,10 +16,18 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", routers.HomeHandler)
+
+	// Type Note
 	r.HandleFunc("/types", routers.GetTypesNoteHandler).Methods("GET")
 	r.HandleFunc("/types", routers.PostTypeNoteHandler).Methods("POST")
-	r.HandleFunc("/types/{code}", routers.GetTypeNoteHandler).Methods("GET")
-	r.HandleFunc("/types/{code}", routers.DeleteTypeNoteHandler).Methods("DELETE")
+	r.HandleFunc("/types/{id}", routers.GetTypeNoteHandler).Methods("GET")
+	r.HandleFunc("/types/{id}", routers.DeleteTypeNoteHandler).Methods("DELETE")
+
+	// Note
+	r.HandleFunc("/notes", routers.GetNotesHandler).Methods("GET")
+	r.HandleFunc("/notes", routers.PostNotesHandler).Methods("POST")
+	r.HandleFunc("/notes/{id}", routers.GetNoteHandler).Methods("GET")
+	r.HandleFunc("/notes/{id}", routers.DeleteNoteHandler).Methods("DELETE")
 
 	http.ListenAndServe(":3000", r)
 }
